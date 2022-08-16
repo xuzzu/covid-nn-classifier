@@ -11,7 +11,7 @@ Has a number of popular models for transfer learning (mobilentev2, resnet50, etc
 - Fine-tuning adjustments
 - Reading of DICOM files
 
-## Main file: 3D Plot.ipynb
+## Additional file: 3D Plot.ipynb
 
 Reads DICOM files from specified directory and does basic data augmentation to highlight lung tissues and plot them in 3D. 
 
