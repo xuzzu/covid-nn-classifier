@@ -1,21 +1,51 @@
-# Covid NN Classifier
+# CNN Covid Classifier
+This code implements image classification using popular pre-trained models (DenseNet201, VGG16, etc.) on a binary classification task. The dataset is expected to be divided into 'train' and 'test' folders, and the subfolders' names must match the classes' names.
 
-One of the backbones of medical imaging research. Does binary classification on CT scans of lungs (Covid/Non-Covid) using transfer learning approach. Has a ready-to-use data pipeline and allows testing of different models in a single run. Incorporates 3D modelling of DICOM files for further work on 3D segmentation.
+It was specifically used and developed for X-Ray and CT scan classification, but can be used for other tasks as well with proper readjustment of meta-layers in models’ structures.
 
-## Main file: all_models.ipynb
+## Prerequisites
+•	Python 3
 
-Has a number of popular models for transfer learning (mobilentev2, resnet50, etc.) with averagely optimal meta-layers. The pipeline allows direct import of png/jpeg images from nested directories.
+•	TensorFlow 2.x
 
-### Work in progress:
-- Data Cleaning (segmentation of areas of interest)
-- Fine-tuning adjustments
-- Reading of DICOM files
+•	plotly
 
-## Additional file: 3D Plot.ipynb
+•	opencv-python
 
-Reads DICOM files from specified directory and does basic data augmentation to highlight lung tissues and plot them in 3D. 
+•	numpy
 
-### Work in progress:
-- Segmentation of only lungs-related tissues
-- Optimization of DICOM import
-- Change of 3D visualization tool
+•	Pillow
+
+•	matplotlib
+
+•	scikit-image
+
+## How to use
+1.	Clone the repository.
+2.	Make sure you have all the dependencies installed.
+3.	Modify the necessary parameters in import_statements.py.
+4.	Run the code python main.py.
+## Additional Notes
+•	The necessary parameters for the models can be adjusted in import_statements.py.
+
+•	The TensorFlow generators require folders' names as class names, and they must lie in the 'train' or 'test' folder.
+
+### Callback
+The script contains a custom callback class MyThresholdCallback that stops the training when the validation and training accuracy reaches the threshold.
+### Models
+•	DenseNet201
+
+•	VGG16
+
+•	VGG19
+
+•	Xception
+
+•	InceptionV3
+
+•	MobileNetV2
+
+•	ResNet50V2
+
+### Plotting
+The code also includes a plot_training function that generates a line plot of the training accuracy over each epoch. The function saves an HTML file that contains the plot to the root folder.
